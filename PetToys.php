@@ -4,9 +4,9 @@ class PetToys
 {
     public $name_toys;
     public $type_toys_animal;
-    public $price;
+    public float $price;
 
-    public function __construct($name_toys, $type_toys_animal, $price)
+    public function __construct($name_toys, $type_toys_animal, float $price)
     {
         $this->setNameToys($name_toys);
         $this->setTypeToysAnimal($type_toys_animal);

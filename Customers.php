@@ -4,9 +4,9 @@ class Customers
 {
     public $first_name;
     public $last_name;
-    public $age;
+    public float $age;
 
-    public function __construct($first_name, $last_name, $age)
+    public function __construct($first_name, $last_name, float $age)
     {
         $this->setFirstName($first_name);
         $this->setLastName($last_name);
@@ -35,13 +35,13 @@ class Customers
         return $this->last_name;
     }
 
-    public function setage($age)
+    public function setAge($age)
     {
-        if (!is_numeric($age) || $age > 18) return
+        if (!is_string($age) || $age > 18) return
             $this->age = $age;
     }
 
-    public function getage()
+    public function getAge()
     {
         return $this->age;
     }

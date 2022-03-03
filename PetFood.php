@@ -37,7 +37,7 @@ class PetFood
 
     public function setPrice($price)
     {
-        if (is_numeric($price) || $price <= 0) return
+        if (is_numeric($price) && $price > 0) return
             $this->price = $price;
     }
 

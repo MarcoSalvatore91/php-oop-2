@@ -4,10 +4,13 @@ class Accessories
 {
     public $name_accessories;
     public $type_accessories;
-    public $price;
+    public float $price;
 
-    public function __construct($name_accessories, $type_accessories, $price)
+    public function __construct($name_accessories, $type_accessories, float $price)
     {
+        $this->setNameAccessories($name_accessories);
+        $this->setTypeAccessories($type_accessories);
+        $this->setPrice($price);
     }
 
     public function setNameAccessories($name_accessories)
