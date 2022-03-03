@@ -31,13 +31,13 @@ class ProductsFood extends PetFood
     }
 }
 
-class ProductsToys extends PetFood
+class ProductsToys extends PetToys
 {
     public $discount;
 
-    public function __construct($name_food, $type_animal, $price, $discount = 0)
+    public function __construct($name_toys, $type_toys_animal, $price, $discount = 0)
     {
-        parent::__construct($this->setNameFood($name_food), $this->setTypeAnimal($type_animal), $this->setPrice($price));
+        parent::__construct($this->setNameToys($name_toys), $this->setTypeToysAnimal($type_toys_animal), $this->setPrice($price));
         $this->setDiscount($discount);
     }
 
@@ -54,13 +54,13 @@ class ProductsToys extends PetFood
     }
 }
 
-class ProductAccessories extends PetFood
+class ProductAccessories extends Accessories
 {
     public $discount;
 
-    public function __construct($name_food, $type_animal, $price, $discount = 0)
+    public function __construct($name_accessories, $type_accessories, $price, $discount = 0)
     {
-        parent::__construct($this->setNameFood($name_food), $this->setTypeAnimal($type_animal), $this->setPrice($price));
+        parent::__construct($this->setNameAccessories($name_accessories), $this->setTypeAccessories($type_accessories), $this->setPrice($price));
         $this->setDiscount($discount);
     }
 
