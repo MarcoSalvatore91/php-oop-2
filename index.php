@@ -2,8 +2,6 @@
 
 require_once __DIR__ . '/Products.php';
 
-require_once __DIR__ . '/Customers.php';
-
 require_once __DIR__ . '/Cart.php';
 
 // User 
@@ -26,8 +24,6 @@ $cat_toys = new ProductsToys('Gomitolo di lana', 'Gatto', 20, 20, 20);
 
 $hamster_toys = new ProductsToys('Ruota', 'Criceto', 10, 10, 10);
 
-var_dump($dog_toys);
-
 // Accessories
 
 $dog_accessories = new ProductAccessories('Guinzaglio', 'Cane', 22, $user_1);
@@ -38,6 +34,14 @@ $birds_accessories = new ProductAccessories('Gabbia per pappagalli', 'Volatile',
 
 // Cart
 
-$addToCart = new Cart($dog_food);
+$item_1 = new Cart();
 
-var_dump($addToCart);
+$item_1->setAddToCart($dog_toys);
+
+$item_1->setAddToCart($cat_toys);
+
+var_dump($item_1);
+
+$item_1->setRemoveFromCart($dog_toys);
+
+var_dump($item_1);
