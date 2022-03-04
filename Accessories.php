@@ -2,24 +2,24 @@
 
 class Accessories
 {
-    public $name_accessories;
+    public $name;
     public $type_accessories;
     public float $price;
 
-    public function __construct($name_accessories, $type_accessories, float $price)
+    public function __construct($name, $type_accessories, float $price)
     {
-        $this->setNameAccessories($name_accessories);
+        $this->setName($name);
         $this->setTypeAccessories($type_accessories);
         $this->setPrice($price);
     }
 
-    public function setNameAccessories($name_accessories)
+    public function setName($name)
     {
-        if (!is_numeric($name_accessories)) return
-            $this->name_accessories = $name_accessories;
+        if (!is_numeric($name)) return
+            $this->name = $name;
     }
 
-    public function getNameAccessories()
+    public function getName()
     {
         return $this->type_accessories;
     }

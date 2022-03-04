@@ -2,30 +2,30 @@
 
 class PetToys
 {
-    public $name_toys;
+    public $name;
     public $type_toys_animal;
     public $price;
     public $width;
     public $height;
 
-    public function __construct($name_toys, $type_toys_animal, $price, $width, $height)
+    public function __construct($name, $type_toys_animal, $price, $width, $weight)
     {
-        $this->setNameToys($name_toys);
+        $this->setName($name);
         $this->setTypeToysAnimal($type_toys_animal);
         $this->setPrice($price);
         $this->setWidth($width);
-        $this->setHeight($height);
+        $this->setWeight($weight);
     }
 
-    public function setNameToys($name_toys)
+    public function setName($name)
     {
-        if (!is_numeric($name_toys)) return
-            $this->name_toys = $name_toys;
+        if (!is_numeric($name)) return
+            $this->name = $name;
     }
 
-    public function getNameToys()
+    public function getName()
     {
-        return $this->name_toys;
+        return $this->name;
     }
 
     public function setTypeToysAnimal($type_toys_animal)
@@ -61,14 +61,14 @@ class PetToys
         return $this->width;
     }
 
-    public function setHeight($height)
+    public function setWeight($weight)
     {
-        if (!is_numeric($height)) return;
-        $this->height = $height . ' cm';
+        if (!is_numeric($weight)) return;
+        $this->weight = $weight . ' gr';
     }
 
-    public function getHeight()
+    public function getWeight()
     {
-        return $this->height;
+        return $this->weight;
     }
 }

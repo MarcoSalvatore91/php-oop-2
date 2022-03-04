@@ -4,6 +4,8 @@ require_once __DIR__ . '/Products.php';
 
 require_once __DIR__ . '/Customers.php';
 
+require_once __DIR__ . '/Cart.php';
+
 // User 
 
 $user_1 = new Customers('Marco', 'Salvatore', '30');
@@ -15,8 +17,6 @@ $dog_food = new ProductsFood('Croccantini - Friskies', 'Cane', 25, $user_1);
 $cat_food = new ProductsFood('Sheba Cat - Patè', 'Gatto', 25);
 
 $fish_food = new ProductsFood('Natural Pet - Mangime per pesci rossi', 'Pesce', 10);
-
-var_dump($dog_food);
 
 // Pet-Toys
 
@@ -36,4 +36,8 @@ $cat_accessories = new ProductAccessories('Lettiera per gatti', 'Gatto', 14);
 
 $birds_accessories = new ProductAccessories('Gabbia per pappagalli', 'Volatile', 50);
 
-var_dump($dog_accessories);
+// Cart
+
+$addToCart = new Cart($dog_food);
+
+var_dump($addToCart);

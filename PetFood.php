@@ -2,26 +2,26 @@
 
 class PetFood
 {
-    public $name_food;
+    public $name;
     public $type_food_animal;
     public $price;
 
-    public function __construct($name_food, $type_animal, $price)
+    public function __construct($name, $type_animal, $price)
     {
-        $this->setNameFood($name_food);
+        $this->setName($name);
         $this->setTypeAnimal($type_animal);
         $this->setPrice($price);
     }
 
-    public function setNameFood($name_food)
+    public function setName($name)
     {
-        if (!is_numeric($name_food)) return
-            $this->name_food = $name_food;
+        if (!is_numeric($name)) return
+            $this->name = $name;
     }
 
-    public function getNameFood()
+    public function getName()
     {
-        return $this->name_food;
+        return $this->name;
     }
 
     public function setTypeAnimal($type_animal)

@@ -12,9 +12,9 @@ class ProductsFood extends PetFood
 {
     public $discount;
 
-    public function __construct($name_food, $type_animal, $price, $discount = 0)
+    public function __construct($name, $type_animal, $price, $discount = 0)
     {
-        parent::__construct($this->setNameFood($name_food), $this->setTypeAnimal($type_animal), $this->setPrice($price));
+        parent::__construct($this->setName($name), $this->setTypeAnimal($type_animal), $this->setPrice($price));
         $this->setDiscount($discount);
     }
 
@@ -35,9 +35,9 @@ class ProductsToys extends PetToys
 {
     public $discount;
 
-    public function __construct($name_toys, $type_toys_animal, $price, $width, $height, $discount = 0)
+    public function __construct($name, $type_toys_animal, $price, $width, $weight, $discount = 0)
     {
-        parent::__construct($this->setNameToys($name_toys), $this->setTypeToysAnimal($type_toys_animal), $this->setPrice($price), $this->setWidth($width), $this->setHeight($height));
+        parent::__construct($this->setName($name), $this->setTypeToysAnimal($type_toys_animal), $this->setPrice($price), $this->setWidth($width), $this->setweight($weight));
         $this->setDiscount($discount);
     }
 
@@ -58,9 +58,9 @@ class ProductAccessories extends Accessories
 {
     public $discount;
 
-    public function __construct($name_accessories, $type_accessories, $price, $discount = 0)
+    public function __construct($name, $type_accessories, $price, $discount = 0)
     {
-        parent::__construct($this->setNameAccessories($name_accessories), $this->setTypeAccessories($type_accessories), $this->setPrice($price));
+        parent::__construct($this->setName($name), $this->setTypeAccessories($type_accessories), $this->setPrice($price));
         $this->setDiscount($discount);
     }
 
