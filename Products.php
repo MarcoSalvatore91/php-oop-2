@@ -35,9 +35,9 @@ class ProductsToys extends PetToys
 {
     public $discount;
 
-    public function __construct($name_toys, $type_toys_animal, $price, $discount = 0)
+    public function __construct($name_toys, $type_toys_animal, $price, $width, $height, $discount = 0)
     {
-        parent::__construct($this->setNameToys($name_toys), $this->setTypeToysAnimal($type_toys_animal), $this->setPrice($price));
+        parent::__construct($this->setNameToys($name_toys), $this->setTypeToysAnimal($type_toys_animal), $this->setPrice($price), $this->setWidth($width), $this->setHeight($height));
         $this->setDiscount($discount);
     }
 

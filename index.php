@@ -20,11 +20,11 @@ var_dump($dog_food);
 
 // Pet-Toys
 
-$dog_toys = new ProductsToys('Osso di gomma', 'Cane', 15, $user_1);
+$dog_toys = new ProductsToys('Osso di gomma', 'Cane', 15, 30, 30, $user_1);
 
-$cat_toys = new ProductsToys('Gomitolo di lana', 'Gatto', 20);
+$cat_toys = new ProductsToys('Gomitolo di lana', 'Gatto', 20, 20, 20);
 
-$hamster_toys = new ProductsToys('Ruota', 'Criceto', 10);
+$hamster_toys = new ProductsToys('Ruota', 'Criceto', 10, 10, 10);
 
 var_dump($dog_toys);
 
