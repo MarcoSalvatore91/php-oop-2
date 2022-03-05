@@ -1,31 +1,19 @@
 <?php
 
-class PetToys
+require_once __DIR__ . '/Products.php';
+
+class PetToys extends Products
 {
-    public $name;
     public $type_toys_animal;
-    public $price;
     public $width;
     public $height;
 
-    public function __construct($name, $type_toys_animal, $price, $width, $weight)
+    public function __construct($name, $type_toys_animal, $width, $weight, $price, $discount)
     {
-        $this->setName($name);
+        parent::__construct($this->setName($name), $this->setPrice($price), $this->setDiscount($discount));
         $this->setTypeToysAnimal($type_toys_animal);
-        $this->setPrice($price);
         $this->setWidth($width);
         $this->setWeight($weight);
-    }
-
-    public function setName($name)
-    {
-        if (!is_numeric($name)) return
-            $this->name = $name;
-    }
-
-    public function getName()
-    {
-        return $this->name;
     }
 
     public function setTypeToysAnimal($type_toys_animal)

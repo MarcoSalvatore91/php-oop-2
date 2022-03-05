@@ -1,67 +1,40 @@
 <?php
 
-require_once __DIR__ . '/PetFood.php';
-
-require_once __DIR__ . '/PetToys.php';
-
-require_once __DIR__ . '/Accessories.php';
-
 require_once __DIR__ . '/Customers.php';
 
-class ProductsFood extends PetFood
+class Products
 {
     public $discount;
+    public $price;
+    public $name;
 
-    public function __construct($name, $type_animal, $price, $discount = 0)
+    public function __construct($name, $price, $discount = 0)
     {
-        parent::__construct($this->setName($name), $this->setTypeAnimal($type_animal), $this->setPrice($price));
         $this->setDiscount($discount);
+        $this->setPrice($price);
+        $this->setName($name);
     }
 
-    public function setDiscount($discount)
+    public function setName($name)
     {
-        if (($discount instanceof Customers) === false) return false;
-        $discount = $this->getPrice() - ($this->getPrice() * (20 / 100));
-        $this->discount = $discount;
+        if (!is_numeric($name)) return
+            $this->name = $name;
     }
 
-    public function getDiscount()
+    public function getName()
     {
-        return $this->discount;
-    }
-}
-
-class ProductsToys extends PetToys
-{
-    public $discount;
-
-    public function __construct($name, $type_toys_animal, $price, $width, $weight, $discount = 0)
-    {
-        parent::__construct($this->setName($name), $this->setTypeToysAnimal($type_toys_animal), $this->setPrice($price), $this->setWidth($width), $this->setweight($weight));
-        $this->setDiscount($discount);
+        return $this->name;
     }
 
-    public function setDiscount($discount)
+    public function setPrice($price)
     {
-        if (($discount instanceof Customers) === false) return false;
-        $discount = $this->getPrice() - ($this->getPrice() * (20 / 100));
-        $this->discount = $discount;
+        if (is_numeric($price) && $price > 0) return
+            $this->price = $price;
     }
 
-    public function getDiscount()
+    public function getPrice()
     {
-        return $this->discount;
-    }
-}
-
-class ProductAccessories extends Accessories
-{
-    public $discount;
-
-    public function __construct($name, $type_accessories, $price, $discount = 0)
-    {
-        parent::__construct($this->setName($name), $this->setTypeAccessories($type_accessories), $this->setPrice($price));
-        $this->setDiscount($discount);
+        return $this->price;
     }
 
     public function setDiscount($discount)

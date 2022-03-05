@@ -10,29 +10,32 @@ $user_1 = new Customers('Marco', 'Salvatore', '30');
 
 // Pet-Food
 
-$dog_food = new ProductsFood('Croccantini - Friskies', 'Cane', 25, $user_1);
+$dog_food = new PetFood('Croccantini - Friskies', 'Cane', 23, $user_1);
 
-$cat_food = new ProductsFood('Sheba Cat - Patè', 'Gatto', 25);
+$cat_food = new PetFood('Sheba Cat - Patè', 'Gatto', 20, $user_1);
 
-$fish_food = new ProductsFood('Natural Pet - Mangime per pesci rossi', 'Pesce', 10);
+$fish_food = new PetFood('Natural Pet - Mangime per pesci rossi', 'Pesce', 10, $user_1);
 
 // Pet-Toys
 
-$dog_toys = new ProductsToys('Osso di gomma', 'Cane', 15, 30, 30, $user_1);
+$dog_toys = new PetToys('Osso di gomma', 'Cane', '15', '30', 30, $user_1);
 
-$cat_toys = new ProductsToys('Gomitolo di lana', 'Gatto', 20, 20, 20);
+$cat_toys = new PetToys('Gomitolo di lana', 'Gatto', '20', '20', 20, $user_1);
 
-$hamster_toys = new ProductsToys('Ruota', 'Criceto', 10, 10, 10);
+$hamster_toys = new PetToys('Ruota', 'Criceto', '10', '10', 10, $user_1);
+
 
 // Accessories
 
-$dog_accessories = new ProductAccessories('Guinzaglio', 'Cane', 22, $user_1);
+$dog_accessories = new Accessories('Guinzaglio', 'Cane', 22, $user_1);
 
-$cat_accessories = new ProductAccessories('Lettiera per gatti', 'Gatto', 14);
+$cat_accessories = new Accessories('Lettiera per gatti', 'Gatto', 14, $user_1);
 
-$birds_accessories = new ProductAccessories('Gabbia per pappagalli', 'Volatile', 50);
+$birds_accessories = new Accessories('Gabbia per pappagalli', 'Volatile', 50, $user_1);
 
 // Cart
+
+var_dump($dog_accessories);
 
 $item_1 = new Cart();
 

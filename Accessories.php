@@ -1,27 +1,15 @@
 <?php
 
-class Accessories
+require_once __DIR__ . '/Products.php';
+
+class Accessories extends Products
 {
-    public $name;
     public $type_accessories;
-    public float $price;
 
-    public function __construct($name, $type_accessories, float $price)
+    public function __construct($name, $type_accessories, $price, $discount)
     {
-        $this->setName($name);
+        parent::__construct($this->setName($name), $this->setPrice($price), $this->setDiscount($discount));
         $this->setTypeAccessories($type_accessories);
-        $this->setPrice($price);
-    }
-
-    public function setName($name)
-    {
-        if (!is_numeric($name)) return
-            $this->name = $name;
-    }
-
-    public function getName()
-    {
-        return $this->type_accessories;
     }
 
     public function setTypeAccessories($type_accessories)
@@ -33,16 +21,5 @@ class Accessories
     public function getTypeAccessories()
     {
         return $this->type_accessories;
-    }
-
-    public function setPrice($price)
-    {
-        if (is_numeric($price) || $price <= 0) return
-            $this->price = $price;
-    }
-
-    public function getPrice()
-    {
-        return $this->price;
     }
 }
