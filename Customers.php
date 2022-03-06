@@ -1,13 +1,16 @@
 <?php
 
-class Customers
+require_once __DIR__ . '/Address.php';
+
+class Customers extends Address
 {
     public $first_name;
     public $last_name;
     public float $age;
 
-    public function __construct($first_name, $last_name, float $age)
+    public function __construct($first_name, $last_name, $age, $city, $street, $zip, $country)
     {
+        parent::__construct($this->setCity($city), $this->setStreet($street), $this->setZip($zip), $this->setCountry($country));
         $this->setFirstName($first_name);
         $this->setLastName($last_name);
         $this->setAge($age);

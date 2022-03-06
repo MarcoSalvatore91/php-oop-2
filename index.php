@@ -6,7 +6,9 @@ require_once __DIR__ . '/Cart.php';
 
 // User 
 
-$user_1 = new Customers('Marco', 'Salvatore', '30');
+$user_1 = new Customers('Marco', 'Salvatore', '30', 'Prato', 'Via Rosa', '59100', 'Italy');
+
+var_dump($user_1);
 
 // Pet-Food
 
@@ -34,8 +36,6 @@ $cat_accessories = new Accessories('Lettiera per gatti', 'Gatto', 14, $user_1);
 $birds_accessories = new Accessories('Gabbia per pappagalli', 'Volatile', 50, $user_1);
 
 // Cart
-
-var_dump($dog_accessories);
 
 $item_1 = new Cart();
 

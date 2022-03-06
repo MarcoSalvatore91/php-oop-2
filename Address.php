@@ -17,7 +17,7 @@ class Address
 
     public function setCity($city)
     {
-        if (is_numeric($city)) return
+        if (!is_numeric($city)) return
             $this->city = $city;
     }
 
@@ -28,7 +28,8 @@ class Address
 
     public function setStreet($street)
     {
-        $this->street = $street;
+        if (!is_numeric($street)) return
+            $this->street = $street;
     }
 
     public function getStreet()
@@ -38,7 +39,7 @@ class Address
 
     public function setZip($zip)
     {
-        if (!(is_numeric($zip))) return
+        if (is_numeric($zip)) return
             $this->zip = $zip;
     }
 
@@ -49,7 +50,7 @@ class Address
 
     public function setCountry($country)
     {
-        if (is_numeric($country)) return
+        if (!is_numeric($country)) return
             $this->country = $country;
     }
 
