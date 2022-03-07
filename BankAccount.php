@@ -2,15 +2,15 @@
 
 class BankAccount
 {
-    public $number;
-    public $date_expire;
-    public $balance;
+    private $number;
+    private $date_expire;
+    private $balance;
 
     public function __construct($number, $date_expire, $balance)
     {
-        $number->setNumber($number);
-        $date_expire->setDateExpire();
-        $balance->setBalance($balance);
+        $this->setNumber($number);
+        $this->setDateExpire($date_expire);
+        $this->setBalance($balance);
     }
 
     public function setNumber($number)
@@ -24,8 +24,10 @@ class BankAccount
         return $this->number;
     }
 
-    public function setDateExpire()
+    public function setDateExpire($date_expire)
     {
+        if ((is_numeric($date_expire)) && $date_expire < 2022) return 'Carta Scaduta';
+        $this->date_expire = $date_expire;
     }
 
     public function getDateExpire()
@@ -35,16 +37,12 @@ class BankAccount
 
     public function setBalance($balance)
     {
-        if (!is_numeric($balance) && $balance <= 0) return
-            $this->balance = $balance;
+        if (!(is_numeric($balance)) || $balance <= 0) return;
+        $this->balance = $balance;
     }
 
     public function getBalance()
     {
-        $this->balance;
+        return $this->balance;
     }
 }
-
-$user_2 = new BankAccount(123456, (2), 3);
-
-var_dump($user_2);

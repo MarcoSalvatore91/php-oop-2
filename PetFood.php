@@ -3,8 +3,7 @@
 require_once __DIR__ . '/Products.php';
 class PetFood extends Products
 {
-    public $type_food_animal;
-    public $price;
+    private $type_animal;
 
     public function __construct($name, $type_animal, $price, $discount)
     {
@@ -14,8 +13,8 @@ class PetFood extends Products
 
     public function setTypeAnimal($type_animal)
     {
-        if (!is_numeric($type_animal)) return
-            $this->type_food_animal = $type_animal;
+        if (is_numeric($type_animal)) return;
+        $this->type_food_animal = $type_animal;
     }
 
     public function getTypeAnimal()

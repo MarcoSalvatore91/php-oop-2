@@ -2,10 +2,10 @@
 
 class Address
 {
-    public $city;
-    public $street;
-    public $zip;
-    public $country;
+    private $city;
+    private $street;
+    private $zip;
+    private $country;
 
     public function __construct($city, $street, $zip, $country)
     {
@@ -28,8 +28,8 @@ class Address
 
     public function setStreet($street)
     {
-        if (!is_numeric($street)) return
-            $this->street = $street;
+        if (is_numeric($street)) return;
+        $this->street = $street;
     }
 
     public function getStreet()
@@ -39,8 +39,8 @@ class Address
 
     public function setZip($zip)
     {
-        if (is_numeric($zip)) return
-            $this->zip = $zip;
+        if (!(is_numeric($zip))) return;
+        $this->zip = $zip;
     }
 
     public function getZip()
@@ -50,8 +50,8 @@ class Address
 
     public function setCountry($country)
     {
-        if (!is_numeric($country)) return
-            $this->country = $country;
+        if (is_numeric($country)) return;
+        $this->country = $country;
     }
 
     public function getCountry()

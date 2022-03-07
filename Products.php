@@ -4,7 +4,7 @@ require_once __DIR__ . '/Customers.php';
 
 class Products
 {
-    public $discount;
+    private $discount;
     public $price;
     public $name;
 

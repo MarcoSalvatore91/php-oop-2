@@ -10,8 +10,8 @@ require_once __DIR__ . '/Accessories.php';
 
 class Cart
 {
-    public $addToCart = [];
-    public $removeFromCart = [];
+    private $addToCart = [];
+    private $removeFromCart = [];
 
     public function setAddToCart($item)
     {

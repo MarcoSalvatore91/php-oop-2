@@ -4,9 +4,9 @@ require_once __DIR__ . '/Address.php';
 
 class Customers extends Address
 {
-    public $first_name;
-    public $last_name;
-    public float $age;
+    private $first_name;
+    private $last_name;
+    private $age;
 
     public function __construct($first_name, $last_name, $age, $city, $street, $zip, $country)
     {
@@ -18,8 +18,8 @@ class Customers extends Address
 
     public function setFirstName($first_name)
     {
-        if (!is_numeric($first_name)) return
-            $this->first_name = $first_name;
+        if (is_numeric($first_name)) return;
+        $this->first_name = $first_name;
     }
 
     public function getFirstName()
@@ -29,8 +29,8 @@ class Customers extends Address
 
     public function setLastName($last_name)
     {
-        if (!is_numeric($last_name)) return
-            $this->last_name = $last_name;
+        if (is_numeric($last_name)) return;
+        $this->last_name = $last_name;
     }
 
     public function getLastName()
@@ -40,8 +40,8 @@ class Customers extends Address
 
     public function setAge($age)
     {
-        if (!is_string($age) || $age > 18) return
-            $this->age = $age;
+        if (is_string($age) || $age > 18) return;
+        $this->age = $age;
     }
 
     public function getAge()

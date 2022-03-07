@@ -4,11 +4,17 @@ require_once __DIR__ . '/Products.php';
 
 require_once __DIR__ . '/Cart.php';
 
+require_once __DIR__ . '/BankAccount.php';
+
 // User 
 
 $user_1 = new Customers('Marco', 'Salvatore', '30', 'Prato', 'Via Rosa', '59100', 'Italy');
 
-var_dump($user_1);
+// Bank Account
+
+$bank_account = new BankAccount('12345', 2022, 200);
+
+var_dump($bank_account);
 
 // Pet-Food
 
